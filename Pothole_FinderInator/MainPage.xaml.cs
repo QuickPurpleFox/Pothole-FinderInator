@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace Pothole_FinderInator
 {
@@ -12,6 +9,20 @@ namespace Pothole_FinderInator
         public MainPage()
         {
             InitializeComponent();
+            GetCurrentLocation();
+        }
+
+        private async void GetCurrentLocation()
+        {
+            try
+            {
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new Exception();
+            }
         }
     }
 }

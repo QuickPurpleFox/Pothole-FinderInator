@@ -13,6 +13,7 @@ namespace Pothole_FinderInator
             InitializeComponent();
 
             MainPage = new MainPage();
+            //TODO fix maps
         }
 
         protected override void OnStart()

@@ -1,14 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Pothole_FinderInator"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
              x:Class="Pothole_FinderInator.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Secretkeys1.xaml"/>
+    </ContentPage.Resources>
+    <StackLayout Spacing="0">
+        <!-- LAYOUT OUTSIDE MAP -->
+        <Frame HasShadow="True"
+               CornerRadius="0">
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#3700B3"
+                                  Offset="0.1"/>
+                    <GradientStop Color="#6200DD"
+                                  Offset="1.0"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+            <Label TextColor="Azure"
+                   FontSize="35"
+                   HorizontalTextAlignment="Center">Pothole Finder</Label>
+        </Frame>
+        <maps:SfMaps >
+            <maps:SfMaps.Layers>
+                <maps:ImageryLayer BingMapStyle="Road" 
+                                   LayerType="Bing" 
+                                   BingMapKey="{StaticResource ApiKey}"/>
+            </maps:SfMaps.Layers> 
+        </maps:SfMaps>
     </StackLayout>
 
 </ContentPage>
