@@ -46,7 +46,9 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012"/>
+        <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2012" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs"/>
@@ -59,6 +61,7 @@
         <None Include="Properties\AndroidManifest.xml"/>
     </ItemGroup>
     <ItemGroup>
+        <AndroidResource Include="Resources\drawable\gps.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml"/>
         <AndroidResource Include="Resources\layout\Toolbar.axml"/>
         <AndroidResource Include="Resources\values\styles.xml"/>

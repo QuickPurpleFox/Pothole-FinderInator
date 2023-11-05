@@ -15,6 +15,7 @@ using Android.App;
 [assembly: AssemblyTrademark("CompanyTrademark")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessBackgroundLocation)]
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
 [assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
 [assembly: UsesFeature("android.hardware.location", Required = false)]

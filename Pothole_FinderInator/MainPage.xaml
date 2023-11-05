@@ -23,13 +23,44 @@
                    FontSize="35"
                    HorizontalTextAlignment="Center">Pothole Finder</Label>
         </Frame>
-        <maps:SfMaps >
+        
+        <maps:SfMaps>
             <maps:SfMaps.Layers>
-                <maps:ImageryLayer BingMapStyle="Road" 
-                                   LayerType="Bing" 
-                                   BingMapKey="{StaticResource ApiKey}"/>
-            </maps:SfMaps.Layers> 
+                <maps:ImageryLayer x:Name="MapPossition"
+                                   Radius="5" 
+                                   DistanceType="KiloMeter" >
+                    <maps:ImageryLayer.MarkerTemplate>
+                        <DataTemplate>
+                            <Image Source="gps.png"
+                                   Scale="1"
+                                   Aspect="AspectFit"
+                                   HeightRequest="35"
+                                   WidthRequest="25"/>
+                        </DataTemplate>
+                    </maps:ImageryLayer.MarkerTemplate>
+                    <maps:ImageryLayer.Markers>
+                        <maps:MapMarker x:Name="Marker" 
+                                        Latitude="{Binding LatitudePossition}"
+                                        Longitude="{Binding LongitudePossition}">
+                        </maps:MapMarker>
+                    </maps:ImageryLayer.Markers>
+                    <maps:ImageryLayer.BingMapStyle>
+                        <maps:BingMapStyle>Road</maps:BingMapStyle>
+                    </maps:ImageryLayer.BingMapStyle>
+                    <!--<maps:ImageryLayer.LayerType>
+                        <maps:LayerType>Bing</maps:LayerType>
+                    </maps:ImageryLayer.LayerType>-->
+                    <maps:ImageryLayer.BingMapKey>
+                        <x:String>{StaticResource ApiKey}</x:String>
+                    </maps:ImageryLayer.BingMapKey>
+                </maps:ImageryLayer>
+            </maps:SfMaps.Layers>
         </maps:SfMaps>
+        
+        <Label Text="Debug: współrzędne"/>
+        <Label x:Name="LatiBinding" Text="{Binding Latitude}"/>
+        <Label x:Name="LongBinding" Text="{Binding Longitude}"/>
+
     </StackLayout>
 
 </ContentPage>

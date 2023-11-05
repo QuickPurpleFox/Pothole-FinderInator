@@ -133,6 +133,197 @@ namespace Pothole_FinderInator.Droid
 			global::Com.Syncfusion.Maps.Resource.Styleable.SfMaps_shapeStroke = global::Pothole_FinderInator.Droid.Resource.Styleable.SfMaps_shapeStroke;
 			global::Com.Syncfusion.Maps.Resource.Styleable.SfMaps_shapeStrokeThickness = global::Pothole_FinderInator.Droid.Resource.Styleable.SfMaps_shapeStrokeThickness;
 			global::Com.Syncfusion.Maps.Resource.Styleable.SfMaps_uri = global::Pothole_FinderInator.Droid.Resource.Styleable.SfMaps_uri;
+			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Pothole_FinderInator.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Essentials.Resource.Attribute.font = global::Pothole_FinderInator.Droid.Resource.Attribute.font;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchStrategy = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchTimeout = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderPackage = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderQuery = global::Pothole_FinderInator.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::Pothole_FinderInator.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::Pothole_FinderInator.Droid.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::Pothole_FinderInator.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::Pothole_FinderInator.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_ripple_material_light = global::Pothole_FinderInator.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_secondary_text_default_material_light = global::Pothole_FinderInator.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::Pothole_FinderInator.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::Pothole_FinderInator.Droid.Resource.Color.browser_actions_divider_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::Pothole_FinderInator.Droid.Resource.Color.browser_actions_text_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::Pothole_FinderInator.Droid.Resource.Color.browser_actions_title_color;
+			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::Pothole_FinderInator.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::Pothole_FinderInator.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::Pothole_FinderInator.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::Pothole_FinderInator.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_vertical_material = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_horizontal_material = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_vertical_material = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_control_corner_material = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_height = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_width = global::Pothole_FinderInator.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_icon_size = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_text_size = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_big_circle_margin = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_content_margin_start = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_height = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_width = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_main_column_padding_top = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_media_narrow_margin = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_icon_size = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_side_padding_top = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_background_padding = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_size_as_large = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Essentials.Resource.Dimension.notification_subtext_size = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad_large_text = global::Pothole_FinderInator.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Essentials.Resource.Drawable.notification_action_background = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_normal = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_pressed = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal_pressed = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_icon_background = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_bg = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::Pothole_FinderInator.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::Pothole_FinderInator.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.accessibility_action_clickable_span = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_0 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_1 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_10 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_11 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_12 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_13 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_14 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_15 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_16 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_17 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_18 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_19 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_2 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_20 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_21 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_22 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_23 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_24 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_25 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_26 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_27 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_28 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_29 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_3 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_30 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_31 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_4 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_5 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_6 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_7 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_8 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_9 = global::Pothole_FinderInator.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Xamarin.Essentials.Resource.Id.actions = global::Pothole_FinderInator.Droid.Resource.Id.actions;
+			global::Xamarin.Essentials.Resource.Id.action_container = global::Pothole_FinderInator.Droid.Resource.Id.action_container;
+			global::Xamarin.Essentials.Resource.Id.action_divider = global::Pothole_FinderInator.Droid.Resource.Id.action_divider;
+			global::Xamarin.Essentials.Resource.Id.action_image = global::Pothole_FinderInator.Droid.Resource.Id.action_image;
+			global::Xamarin.Essentials.Resource.Id.action_text = global::Pothole_FinderInator.Droid.Resource.Id.action_text;
+			global::Xamarin.Essentials.Resource.Id.async = global::Pothole_FinderInator.Droid.Resource.Id.async;
+			global::Xamarin.Essentials.Resource.Id.blocking = global::Pothole_FinderInator.Droid.Resource.Id.blocking;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::Pothole_FinderInator.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::Pothole_FinderInator.Droid.Resource.Id.browser_actions_menu_items;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::Pothole_FinderInator.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::Pothole_FinderInator.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::Pothole_FinderInator.Droid.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.Essentials.Resource.Id.chronometer = global::Pothole_FinderInator.Droid.Resource.Id.chronometer;
+			global::Xamarin.Essentials.Resource.Id.dialog_button = global::Pothole_FinderInator.Droid.Resource.Id.dialog_button;
+			global::Xamarin.Essentials.Resource.Id.forever = global::Pothole_FinderInator.Droid.Resource.Id.forever;
+			global::Xamarin.Essentials.Resource.Id.icon = global::Pothole_FinderInator.Droid.Resource.Id.icon;
+			global::Xamarin.Essentials.Resource.Id.icon_group = global::Pothole_FinderInator.Droid.Resource.Id.icon_group;
+			global::Xamarin.Essentials.Resource.Id.info = global::Pothole_FinderInator.Droid.Resource.Id.info;
+			global::Xamarin.Essentials.Resource.Id.italic = global::Pothole_FinderInator.Droid.Resource.Id.italic;
+			global::Xamarin.Essentials.Resource.Id.line1 = global::Pothole_FinderInator.Droid.Resource.Id.line1;
+			global::Xamarin.Essentials.Resource.Id.line3 = global::Pothole_FinderInator.Droid.Resource.Id.line3;
+			global::Xamarin.Essentials.Resource.Id.normal = global::Pothole_FinderInator.Droid.Resource.Id.normal;
+			global::Xamarin.Essentials.Resource.Id.notification_background = global::Pothole_FinderInator.Droid.Resource.Id.notification_background;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::Pothole_FinderInator.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::Pothole_FinderInator.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Essentials.Resource.Id.right_icon = global::Pothole_FinderInator.Droid.Resource.Id.right_icon;
+			global::Xamarin.Essentials.Resource.Id.right_side = global::Pothole_FinderInator.Droid.Resource.Id.right_side;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_actions = global::Pothole_FinderInator.Droid.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_clickable_spans = global::Pothole_FinderInator.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_heading = global::Pothole_FinderInator.Droid.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_pane_title = global::Pothole_FinderInator.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Essentials.Resource.Id.tag_screen_reader_focusable = global::Pothole_FinderInator.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::Pothole_FinderInator.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_event_manager = global::Pothole_FinderInator.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_listeners = global::Pothole_FinderInator.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Essentials.Resource.Id.text = global::Pothole_FinderInator.Droid.Resource.Id.text;
+			global::Xamarin.Essentials.Resource.Id.text2 = global::Pothole_FinderInator.Droid.Resource.Id.text2;
+			global::Xamarin.Essentials.Resource.Id.time = global::Pothole_FinderInator.Droid.Resource.Id.time;
+			global::Xamarin.Essentials.Resource.Id.title = global::Pothole_FinderInator.Droid.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.view_tree_lifecycle_owner = global::Pothole_FinderInator.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::Pothole_FinderInator.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::Pothole_FinderInator.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::Pothole_FinderInator.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.Essentials.Resource.Layout.custom_dialog = global::Pothole_FinderInator.Droid.Resource.Layout.custom_dialog;
+			global::Xamarin.Essentials.Resource.Layout.notification_action = global::Pothole_FinderInator.Droid.Resource.Layout.notification_action;
+			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::Pothole_FinderInator.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::Pothole_FinderInator.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::Pothole_FinderInator.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::Pothole_FinderInator.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::Pothole_FinderInator.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.copy_toast_msg = global::Pothole_FinderInator.Droid.Resource.String.copy_toast_msg;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_copy_link = global::Pothole_FinderInator.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_open_in_browser = global::Pothole_FinderInator.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_share_link = global::Pothole_FinderInator.Droid.Resource.String.fallback_menu_item_share_link;
+			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::Pothole_FinderInator.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::Pothole_FinderInator.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::Pothole_FinderInator.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::Pothole_FinderInator.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Time = global::Pothole_FinderInator.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::Pothole_FinderInator.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::Pothole_FinderInator.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::Pothole_FinderInator.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::Pothole_FinderInator.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::Pothole_FinderInator.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::Pothole_FinderInator.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::Pothole_FinderInator.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontWeight = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_font = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontStyle = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_ttcIndex = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::Pothole_FinderInator.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerColor = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerX = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerY = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endColor = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endX = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endY = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_gradientRadius = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startColor = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startX = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::Pothole_FinderInator.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Essentials.Resource.Xml.image_share_filepaths = global::Pothole_FinderInator.Droid.Resource.Xml.image_share_filepaths;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Pothole_FinderInator.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.abc_fade_in = global::Pothole_FinderInator.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.abc_fade_out = global::Pothole_FinderInator.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Maps.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Pothole_FinderInator.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -15721,125 +15912,128 @@ namespace Pothole_FinderInator.Droid
 			// aapt resource value: 0x7F07009F
 			public const int googleg_standard_color_18 = 2131165343;
 			
-			// aapt resource value: 0x7F0700A4
-			public const int Icon = 2131165348;
-			
 			// aapt resource value: 0x7F0700A0
-			public const int ic_mtrl_checked_circle = 2131165344;
-			
-			// aapt resource value: 0x7F0700A1
-			public const int ic_mtrl_chip_checked_black = 2131165345;
-			
-			// aapt resource value: 0x7F0700A2
-			public const int ic_mtrl_chip_checked_circle = 2131165346;
-			
-			// aapt resource value: 0x7F0700A3
-			public const int ic_mtrl_chip_close_circle = 2131165347;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int inputlayout_togglecollapseicon = 2131165350;
-			
-			// aapt resource value: 0x7F0700A7
-			public const int inputlayout_togglevisibleicon = 2131165351;
+			public const int gps = 2131165344;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int input_layout_drop_down_icon = 2131165349;
+			public const int Icon = 2131165349;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int ic_mtrl_checked_circle = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int ic_mtrl_chip_checked_black = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int ic_mtrl_chip_checked_circle = 2131165347;
+			
+			// aapt resource value: 0x7F0700A4
+			public const int ic_mtrl_chip_close_circle = 2131165348;
+			
+			// aapt resource value: 0x7F0700A7
+			public const int inputlayout_togglecollapseicon = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int material_ic_calendar_black_24dp = 2131165352;
+			public const int inputlayout_togglevisibleicon = 2131165352;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int input_layout_drop_down_icon = 2131165350;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int material_ic_clear_black_24dp = 2131165353;
+			public const int material_ic_calendar_black_24dp = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int material_ic_edit_black_24dp = 2131165354;
+			public const int material_ic_clear_black_24dp = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165355;
+			public const int material_ic_edit_black_24dp = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165356;
+			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int material_ic_menu_arrow_down_black_24dp = 2131165357;
+			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int material_ic_menu_arrow_up_black_24dp = 2131165358;
+			public const int material_ic_menu_arrow_down_black_24dp = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int mtrl_dialog_background = 2131165359;
+			public const int material_ic_menu_arrow_up_black_24dp = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int mtrl_dropdown_arrow = 2131165360;
+			public const int mtrl_dialog_background = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int mtrl_ic_arrow_drop_down = 2131165361;
+			public const int mtrl_dropdown_arrow = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int mtrl_ic_arrow_drop_up = 2131165362;
+			public const int mtrl_ic_arrow_drop_down = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int mtrl_ic_cancel = 2131165363;
+			public const int mtrl_ic_arrow_drop_up = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int mtrl_ic_error = 2131165364;
+			public const int mtrl_ic_cancel = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int mtrl_popupmenu_background = 2131165365;
+			public const int mtrl_ic_error = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int mtrl_popupmenu_background_dark = 2131165366;
+			public const int mtrl_popupmenu_background = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int mtrl_tabs_default_indicator = 2131165367;
+			public const int mtrl_popupmenu_background_dark = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int navigation_empty_icon = 2131165368;
+			public const int mtrl_tabs_default_indicator = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int notification_action_background = 2131165369;
+			public const int navigation_empty_icon = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int notification_bg = 2131165370;
+			public const int notification_action_background = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int notification_bg_low = 2131165371;
+			public const int notification_bg = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int notification_bg_low_normal = 2131165372;
+			public const int notification_bg_low = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int notification_bg_low_pressed = 2131165373;
+			public const int notification_bg_low_normal = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int notification_bg_normal = 2131165374;
+			public const int notification_bg_low_pressed = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int notification_bg_normal_pressed = 2131165375;
+			public const int notification_bg_normal = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int notification_icon_background = 2131165376;
+			public const int notification_bg_normal_pressed = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int notification_template_icon_bg = 2131165377;
+			public const int notification_icon_background = 2131165377;
 			
 			// aapt resource value: 0x7F0700C2
-			public const int notification_template_icon_low_bg = 2131165378;
+			public const int notification_template_icon_bg = 2131165378;
 			
 			// aapt resource value: 0x7F0700C3
-			public const int notification_tile_bg = 2131165379;
+			public const int notification_template_icon_low_bg = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int notify_panel_notification_icon_bg = 2131165380;
+			public const int notification_tile_bg = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int test_custom_background = 2131165381;
+			public const int notify_panel_notification_icon_bg = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int tooltip_frame_dark = 2131165382;
+			public const int test_custom_background = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int tooltip_frame_light = 2131165383;
+			public const int tooltip_frame_dark = 2131165383;
+			
+			// aapt resource value: 0x7F0700C8
+			public const int tooltip_frame_light = 2131165384;
 			
 			static Drawable()
 			{
@@ -16833,28 +17027,31 @@ namespace Pothole_FinderInator.Droid
 			public const int view_offset_helper = 2131231045;
 			
 			// aapt resource value: 0x7F080146
-			public const int view_tree_saved_state_registry_owner = 2131231046;
+			public const int view_tree_lifecycle_owner = 2131231046;
 			
 			// aapt resource value: 0x7F080147
-			public const int visible = 2131231047;
+			public const int view_tree_saved_state_registry_owner = 2131231047;
 			
 			// aapt resource value: 0x7F080148
-			public const int visible_removing_fragment_view_tag = 2131231048;
+			public const int visible = 2131231048;
 			
 			// aapt resource value: 0x7F080149
-			public const int wide = 2131231049;
-			
-			// aapt resource value: 0x7F08014B
-			public const int withinBounds = 2131231051;
+			public const int visible_removing_fragment_view_tag = 2131231049;
 			
 			// aapt resource value: 0x7F08014A
-			public const int withText = 2131231050;
+			public const int wide = 2131231050;
 			
 			// aapt resource value: 0x7F08014C
-			public const int wrap_content = 2131231052;
+			public const int withinBounds = 2131231052;
+			
+			// aapt resource value: 0x7F08014B
+			public const int withText = 2131231051;
 			
 			// aapt resource value: 0x7F08014D
-			public const int zero_corner_chip = 2131231053;
+			public const int wrap_content = 2131231053;
+			
+			// aapt resource value: 0x7F08014E
+			public const int zero_corner_chip = 2131231054;
 			
 			static Id()
 			{
@@ -23910,6 +24107,9 @@ namespace Pothole_FinderInator.Droid
 			
 			// aapt resource value: 0x7F110005
 			public const int standalone_badge_offset = 2131820549;
+			
+			// aapt resource value: 0x7F110006
+			public const int xamarin_essentials_fileprovider_file_paths = 2131820550;
 			
 			static Xml()
 			{
