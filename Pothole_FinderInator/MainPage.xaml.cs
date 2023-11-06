@@ -8,17 +8,21 @@ namespace Pothole_FinderInator
 {
     public partial class MainPage : ContentPage
     {
-        private MapMarker _userMarker = new MapMarker();
-        private ImageryLayer _imageryLayer = new ImageryLayer();
-        
         public MainPage()
         {
             InitializeComponent();
-            GetCurrentLocation();
+            StartAccelerationReading();
+            Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                GetCurrentLocation();
+                return true;
+            });
         }
-
+        
         private async void GetCurrentLocation()
         {
+            
             try
             {
                 var location = await Geolocation.GetLastKnownLocationAsync();
@@ -34,9 +38,6 @@ namespace Pothole_FinderInator
                     
                     Marker.Latitude = location.Latitude.ToString();
                     Marker.Longitude = location.Longitude.ToString();
-                    
-                    var centerPosition = new Syncfusion.SfMaps.XForms.Position(location.Latitude, location.Longitude);
-                    var distance = Distance.FromKilometers(1.0); 
                 }
             }
             catch (Exception e)
@@ -44,6 +45,19 @@ namespace Pothole_FinderInator
                 Console.WriteLine(e);
                 throw new Exception();
             }
+        }
+
+        private static void StartAccelerationReading()
+        {
+            SensorSpeed speed = SensorSpeed.UI;
+            Accelerometer.Start(speed);
+        }
+        
+        private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+        {
+            var data = e.Reading;
+            Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
+            AkcelerometrY.Text = data.Acceleration.Y.ToString();
         }
     }
 }

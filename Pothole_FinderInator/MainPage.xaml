@@ -27,7 +27,7 @@
         <maps:SfMaps>
             <maps:SfMaps.Layers>
                 <maps:ImageryLayer x:Name="MapPossition"
-                                   Radius="5" 
+                                   Radius="1" 
                                    DistanceType="KiloMeter" >
                     <maps:ImageryLayer.MarkerTemplate>
                         <DataTemplate>
@@ -60,6 +60,9 @@
         <Label Text="Debug: współrzędne"/>
         <Label x:Name="LatiBinding" Text="{Binding Latitude}"/>
         <Label x:Name="LongBinding" Text="{Binding Longitude}"/>
+        
+        <Label Text="Debug: Akceleracja"/>
+        <Label x:Name="AkcelerometrY" Text="{Binding AkcY}"/>
 
     </StackLayout>
 
