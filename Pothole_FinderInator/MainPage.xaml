@@ -9,7 +9,7 @@
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <!-- LAYOUT OUTSIDE MAP -->
-        <Frame HasShadow="True"
+        <!--<Frame HasShadow="True"
                CornerRadius="0">
             <Frame.Background>
                 <LinearGradientBrush EndPoint="0,1">
@@ -22,7 +22,7 @@
             <Label TextColor="Azure"
                    FontSize="35"
                    HorizontalTextAlignment="Center">Pothole Finder</Label>
-        </Frame>
+        </Frame>-->
         
         <maps:SfMaps>
             <maps:SfMaps.Layers>
@@ -62,7 +62,10 @@
         <Label x:Name="LongBinding" Text="{Binding Longitude}"/>
         
         <Label Text="Debug: Akceleracja"/>
+        <Label x:Name="AkcelerometrX" Text="{Binding AkcX}"/>
         <Label x:Name="AkcelerometrY" Text="{Binding AkcY}"/>
+        <Label x:Name="AkcelerometrZ" Text="{Binding AkcZ}"/>
+        <Label x:Name="AkcelerometrMaxY" Text="{Binding AkcTest}"/>
 
     </StackLayout>
 

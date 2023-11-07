@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:potholeFinderInator="clr-namespace:Pothole_FinderInator;assembly=Pothole_FinderInator"
+             BackgroundColor="#6200EE"
+             x:Class="Pothole_FinderInator.AppShell">
+    
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="200"
+                  BackgroundColor="#018786">
+                <Image Source="PotholeFinder.png"
+                       Aspect="AspectFit"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    <Shell.ToolbarItems>
+        <ToolbarItem IconImageSource="PotholeFinder.png"
+                     Text="Pothole Finder"
+                     Order="Default"/>
+    </Shell.ToolbarItems>
+    
+    <FlyoutItem Route="Main Page" 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Main Page"
+                      ContentTemplate="{DataTemplate potholeFinderInator:MainPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Route="Login" 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Login"
+                      ContentTemplate="{DataTemplate potholeFinderInator:LoginPage}"/>
+    </FlyoutItem>
+</Shell>

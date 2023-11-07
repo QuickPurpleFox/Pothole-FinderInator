@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace Pothole_FinderInator.Droid
 {
-    [Activity(Label = "Pothole_FinderInator", Theme = "@style/MainTheme", MainLauncher = true,
+    [Activity(Label = "Pothole Finder", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

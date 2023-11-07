@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Syncfusion.SfMaps.XForms;
@@ -8,12 +9,14 @@ namespace Pothole_FinderInator
 {
     public partial class MainPage : ContentPage
     {
+        private CancellationTokenSource _cts;
+        
         public MainPage()
         {
             InitializeComponent();
             StartAccelerationReading();
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            Device.StartTimer(new TimeSpan(0,0,1), () =>
             {
                 GetCurrentLocation();
                 return true;
@@ -25,7 +28,9 @@ namespace Pothole_FinderInator
             
             try
             {
-                var location = await Geolocation.GetLastKnownLocationAsync();
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+                _cts = new CancellationTokenSource();
+                var location = await Geolocation.GetLocationAsync();
 
                 if (location != null)
                 {
@@ -57,7 +62,13 @@ namespace Pothole_FinderInator
         {
             var data = e.Reading;
             Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
-            AkcelerometrY.Text = data.Acceleration.Y.ToString();
+            AkcelerometrX.Text = "X: " + data.Acceleration.X.ToString();
+            AkcelerometrY.Text = "Y: " + data.Acceleration.Y.ToString();
+            AkcelerometrZ.Text = "Z: " + data.Acceleration.Z.ToString();
+            if (data.Acceleration.Y > 1.5)
+            {
+                AkcelerometrMaxY.Text = "MaxY: "+data.Acceleration.Y.ToString();
+            }
         }
     }
 }

@@ -11,9 +11,8 @@ namespace Pothole_FinderInator
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
-            //TODO fix maps
+            
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()
