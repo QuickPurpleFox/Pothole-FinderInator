@@ -1,30 +1,43 @@
-﻿using Application = Xamarin.Forms.Application;
+﻿using System;
+using System.Threading.Tasks;
+using Application = Xamarin.Forms.Application;
 using Npgsql;
+using Xamarin.Forms;
 
 namespace Pothole_FinderInator
 {
     public static class DbConnectionHandler
     {
-        private static string _DbLogib;
-        private static string _DbPassword;
         private static string _connString;
+
+        public static string UserName = null;
             
         static DbConnectionHandler()
         {
-            _DbLogib = (string)Application.Current.Resources["DbLogin"];
-            _DbPassword = (string)Application.Current.Resources["DbPassword"];
-            _connString = "postgresql://" + _DbLogib + ":" + _DbPassword +
+            
+            Application.Current.Resources.TryGetValue("DbLogin", out var dbLogin);
+            Application.Current.Resources.TryGetValue("DbPassword", out var dbPassword);
+            _connString = "postgresql://" + dbLogin + ":" + dbPassword +
                           "@lithe-sage-11501.8nj.cockroachlabs.cloud:26257/holedetectorinator?sslmode=verify-full";
 
-            DbConnectionStart();
+            _ = DbConnectionStart();
         }
 
-        static async void DbConnectionStart()
+        static async Task DbConnectionStart()
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(_connString);
-            var dataSource = dataSourceBuilder.Build();
+            try
+            {
+                var dataSourceBuilder = new NpgsqlDataSourceBuilder(_connString);
+                var dataSource = dataSourceBuilder.Build();
 
-            var conn = await dataSource.OpenConnectionAsync();
+                var conn = await dataSource.OpenConnectionAsync();
+                conn.Open();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new Exception();
+            }
         }
 
         public static string GetUserName()
