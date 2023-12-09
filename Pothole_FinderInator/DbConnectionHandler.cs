@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Application = Xamarin.Forms.Application;
 using Npgsql;
-using Xamarin.Forms;
 
 namespace Pothole_FinderInator
 {
@@ -23,7 +22,7 @@ namespace Pothole_FinderInator
             _ = DbConnectionStart();
         }
 
-        static async Task DbConnectionStart()
+        private static async Task DbConnectionStart()
         {
             try
             {
@@ -40,9 +39,14 @@ namespace Pothole_FinderInator
             }
         }
 
-        public static string GetUserName()
+        public static string Login()
         {
             return "test";
+        }
+
+        public static int register()
+        {
+            return -1;
         }
     }
 }
