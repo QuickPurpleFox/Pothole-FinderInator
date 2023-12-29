@@ -9,7 +9,7 @@ namespace Pothole_FinderInator
     {
         private static string _connString;
 
-        public static string UserName = null;
+        public static string UserName = "Admin";
             
         static DbConnectionHandler()
         {
