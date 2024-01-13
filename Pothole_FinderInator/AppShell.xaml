@@ -10,14 +10,14 @@
         <DataTemplate>
             <Grid HeightRequest="200"
                   BackgroundColor="#018786">
-                <Image Source="PotholeFinder.png"
+                <Image Source="Logo.png"
                        Aspect="AspectFit"/>
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
     
     <Shell.ToolbarItems>
-        <ToolbarItem IconImageSource="PotholeFinder.png"
+        <ToolbarItem IconImageSource="Logo.png"
                      Text="Pothole Finder"
                      Order="Default"/>
     </Shell.ToolbarItems>

@@ -17,7 +17,7 @@
         <StackLayout Padding="40"
                      VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
-            <Image Source="PotholeFinder.png" WidthRequest="180" HeightRequest="180"/>
+            <Image Source="Profile.png" WidthRequest="180" HeightRequest="180"/>
             <Entry Placeholder="Username" TextColor="White" PlaceholderColor="DarkGray"/>
             <Entry Placeholder="Password" TextColor="White" PlaceholderColor="DarkGray" IsPassword="True"/>
             <Button VerticalOptions="Center"
