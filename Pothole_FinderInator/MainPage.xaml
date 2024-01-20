@@ -65,7 +65,6 @@
         <Label x:Name="AkcelerometrX" Text="{Binding AkcX}"/>
         <Label x:Name="AkcelerometrY" Text="{Binding AkcY}"/>
         <Label x:Name="AkcelerometrZ" Text="{Binding AkcZ}"/>
-        <Label x:Name="AkcelerometrMaxY" Text="{Binding AkcTest}"/>
 
     </StackLayout>
 

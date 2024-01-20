@@ -18,14 +18,16 @@
                      VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
             <Image Source="Profile.png" WidthRequest="180" HeightRequest="180"/>
-            <Entry Placeholder="Username" TextColor="White" PlaceholderColor="DarkGray"/>
-            <Entry Placeholder="Password" TextColor="White" PlaceholderColor="DarkGray" IsPassword="True"/>
+            <Entry x:Name="Username" Placeholder="Username" TextColor="White" PlaceholderColor="DarkGray"/>
+            <Entry x:Name="Password" Placeholder="Password" TextColor="White" PlaceholderColor="DarkGray" IsPassword="True"/>
             <Button VerticalOptions="Center"
                     Text="Login"
                     BackgroundColor="Transparent"
                     BorderColor="White"
                     BorderWidth="1.5"
-                    CornerRadius="50"/>
+                    CornerRadius="50"
+                    Clicked="LoginEvent"/>
+            <Label x:Name="Warning" TextColor="Red" Text=""/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

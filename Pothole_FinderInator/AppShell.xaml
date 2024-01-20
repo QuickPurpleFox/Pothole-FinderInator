@@ -9,7 +9,7 @@
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid HeightRequest="200"
-                  BackgroundColor="#018786">
+                  BackgroundColor="#260542">
                 <Image Source="Logo.png"
                        Aspect="AspectFit"/>
             </Grid>

@@ -2,24 +2,34 @@
 using System.Threading.Tasks;
 using Application = Xamarin.Forms.Application;
 using Npgsql;
+using NpgsqlTypes;
 
 namespace Pothole_FinderInator
 {
     public static class DbConnectionHandler
     {
-        private static string _connString;
-
-        public static string UserName = "Admin";
+        private static NpgsqlConnectionStringBuilder _connString;
+        private static NpgsqlConnection _conn;
+        
+        public static string UserName = null;
 
             
         static DbConnectionHandler()
         {
+            Application.Current.Resources.TryGetValue("DATABASE_URL", out var dbUrl);
             
-            Application.Current.Resources.TryGetValue("DbLogin", out var dbLogin);
-            Application.Current.Resources.TryGetValue("DbPassword", out var dbPassword);
-            //_connString = "postgresql://" + dbLogin + ":" + dbPassword +
-            //              "@lithe-sage-11501.8nj.cockroachlabs.cloud:26257/holedetectorinator?sslmode=verify-full";
-            _connString = "postgresql://haniasmolej:T0DpVj7xcYmeJaaBSCYeQw@lithe-sage-11501.8nj.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full";
+            Uri databaseUrl = new Uri(dbUrl.ToString());
+            
+            _connString = new NpgsqlConnectionStringBuilder();
+            _connString.Host = "pothole-cockroach-8522.7tc.aws-eu-central-1.cockroachlabs.cloud";
+            _connString.Port = 26257;
+            
+            var items = databaseUrl.UserInfo.Split(new[] { ':' });
+            _connString.Username = "28860";
+            _connString.Password = "g9KICM4DEzViwadNJ-8S_w";
+            
+            _connString.Database = "pothole_finder";
+            _connString.SslMode = SslMode.Require;
 
             _ = DbConnectionStart();
         }
@@ -28,97 +38,63 @@ namespace Pothole_FinderInator
         {
             try
             {
-                var dataSourceBuilder = new NpgsqlDataSourceBuilder(_connString);
+                var dataSourceBuilder = new NpgsqlDataSourceBuilder(_connString.ConnectionString);
                 var dataSource = dataSourceBuilder.Build();
 
-                var conn = await dataSource.OpenConnectionAsync();
-                conn.Open();
+                _conn = await dataSource.OpenConnectionAsync();
+                await _conn.OpenAsync();
             }
-            catch (Exception e)
+            catch (NpgsqlException e)
             {
                 Console.WriteLine(e);
-                throw new Exception();
+                throw new NpgsqlException();
             }
-        }
-
-        public static void ExecuteCommand(string command)
-        {
-            var conn = new NpgsqlConnection(_connString);
-            var cmd = new NpgsqlCommand(command, conn);
-            cmd.ExecuteNonQuery();
         }
         
-        public static int UserExistsCheck(string username, string password)
+        private static int UserExistsCheck(string username, string password)
         {
-            var conn = new NpgsqlConnection(_connString);
-            var cmd = new NpgsqlCommand(string.Format("SELECT COUNT(*) FROM users WHERE login={0} AND password={1};",username, password), conn);
-            int userCheck = cmd.ExecuteReader().GetInt32(0);
-            return userCheck;
-        }
-        public static int HoleExistsCheck(float coord_ns, float coord_we)
-        {
-            var conn = new NpgsqlConnection(_connString);
-            var cmd = new NpgsqlCommand(string.Format("SELECT COUNT(*) FROM holes WHERE coord_ns={0} AND coord_we={1};", coord_ns, coord_we), conn);
-            int userCheck = cmd.ExecuteReader().GetInt32(0);
-            return userCheck;
-        }
-
-        public static int UserNumberCheck()
-        {
-            var conn = new NpgsqlConnection(_connString);
-            var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users;", conn);
-            int userNumberCheck = cmd.ExecuteReader().GetInt32(0);
-            return userNumberCheck;
-        }
-        public static int HoleNumberCheck()
-        {
-            var conn = new NpgsqlConnection(_connString);
-            var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM holes;", conn);
-            int userNumberCheck = cmd.ExecuteReader().GetInt32(0);
-            return userNumberCheck;
-        }
-
-
-        public static bool Login(string username, string password)
-        {
-            if (UserExistsCheck(username, password) == 1)
-                return true;
-            else
-                return false;
-        }
-
-        public static string register(string inputlogin, string inputpassword)
-        {
-            int newuser_id = UserNumberCheck() + 1;
-            if (UserExistsCheck(inputlogin, inputpassword) == 0)
+            var userCheck = 0;
+            using (var cmd = new NpgsqlCommand())
             {
-                ExecuteCommand(string.Format("INSERT INTO users VALUES ({0}, '{1}', '{2}');", newuser_id, inputlogin, inputpassword));
-                return "You've registered succesfully";
+                try
+                {
+                    _conn = new NpgsqlConnection(_connString.ConnectionString);
+                    _conn.Open();
+                    cmd.Connection = _conn;
+                    cmd.CommandText = "SELECT COUNT(*) FROM users WHERE username=@username AND password=@password;";
+                    cmd.Parameters.AddWithValue("username", NpgsqlDbType.Text, username);
+                    cmd.Parameters.AddWithValue("password", NpgsqlDbType.Text, password);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            userCheck = reader.GetInt32(0);
+                        }
+
+                        return userCheck;
+                    }
+                }
+                catch (NpgsqlException e)
+                {
+                    Console.WriteLine(e);
+                    throw new NpgsqlException();
+                }
+                catch (System.InvalidOperationException e)
+                {
+                    Console.WriteLine();
+                    return 0;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return -1;
+                }
             }
-               
-            else
-                return "UserAlreadyExists";
         }
-        public static string AddPothole(float coord_ns, float coord_we, string holeSize)
+
+        public static int Login(string username, string password)
         {
-            int newhole_id = HoleNumberCheck() + 1;
-            if (HoleExistsCheck(coord_ns, coord_we) == 0)
-            {
-                ExecuteCommand(string.Format("INSERT INTO users VALUES ({0}, {1}, {2}, {3});", newhole_id, coord_ns, coord_we, holeSize));
-                return "Pothole succesfully added";
-            }
-            else
-                return "Pothole was already added, would you like to change something?";
-        }
-        public static string UpdatePotholeSize(int hole_id, string holesize)
-        {
-            ExecuteCommand(string.Format("UPDATE holes SET hole_size={0} WHERE id={1}",holesize,hole_id));
-            return "Pothole size updated";
-        }
-        public static string DeletePothole(int hole_id, float coord_ns, float coord_we)
-        {
-            ExecuteCommand(string.Format("DELETE FROM holes WHERE id = {0} OR (coord_ns = {1} AND coord_we = {2});", hole_id, coord_ns, coord_we));
-            return "Hole deleted";
+            return UserExistsCheck(username, password);
         }
     }
 }
