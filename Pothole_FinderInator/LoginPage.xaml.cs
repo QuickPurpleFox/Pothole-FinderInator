@@ -24,7 +24,7 @@ namespace Pothole_FinderInator
             {
                 DbConnectionHandler.UserName = Username.Text;
             }
-            else if (userValue > 1)
+            else if (userValue > 1 || userValue == 0)
             {
                 Warning.Text = "Wrong username or password!";
             }

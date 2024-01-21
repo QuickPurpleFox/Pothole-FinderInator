@@ -27,7 +27,7 @@
                     BorderWidth="1.5"
                     CornerRadius="50"
                     Clicked="LoginEvent"/>
-            <Label x:Name="Warning" TextColor="Red" Text=""/>
+            <Label x:Name="Warning" TextColor="White" Text=""/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

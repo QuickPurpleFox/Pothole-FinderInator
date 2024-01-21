@@ -16,17 +16,16 @@ namespace Pothole_FinderInator
             
         static DbConnectionHandler()
         {
-            Application.Current.Resources.TryGetValue("DATABASE_URL", out var dbUrl);
+            Application.Current.Resources.TryGetValue("Password", out var password);
             
-            Uri databaseUrl = new Uri(dbUrl.ToString());
+            //Uri databaseUrl = new Uri(dbUrl.ToString());
             
             _connString = new NpgsqlConnectionStringBuilder();
             _connString.Host = "pothole-cockroach-8522.7tc.aws-eu-central-1.cockroachlabs.cloud";
             _connString.Port = 26257;
             
-            var items = databaseUrl.UserInfo.Split(new[] { ':' });
             _connString.Username = "28860";
-            _connString.Password = "g9KICM4DEzViwadNJ-8S_w";
+            _connString.Password = password.ToString();
             
             _connString.Database = "pothole_finder";
             _connString.SslMode = SslMode.Require;
