@@ -1,24 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
-using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using Rg.Plugins.Popup.Pages;
-using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
+using Syncfusion.SfMaps.XForms;
+using Xamarin.Forms.Maps;
 
 namespace Pothole_FinderInator
 {
     public partial class MainPage : ContentPage
     {
+        private HolePopUp _holePopUp;
         private CancellationTokenSource _cts;
-        private HolePopUp _popup;
+        private bool _isDisplay = false;
+        private SfMaps _map;
         
         public MainPage()
         {
             InitializeComponent();
+            _map = SfMaps;
             StartAccelerationReading();
+            DbConnectionHandler.GetPotholes();
 
-            _popup = new HolePopUp();
+            PopulateMap();
             
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
             Device.StartTimer(new TimeSpan(0,0,1), () =>
@@ -67,13 +72,41 @@ namespace Pothole_FinderInator
         {
             var data = e.Reading;
             Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
-            AkcelerometrX.Text = "X: " + data.Acceleration.X.ToString();
-            AkcelerometrY.Text = "Y: " + data.Acceleration.Y.ToString();
-            AkcelerometrZ.Text = "Z: " + data.Acceleration.Z.ToString();
-            if (data.Acceleration.Y > 2 || data.Acceleration.X > 2 || data.Acceleration.Z > 2)
+            
+            double shakeThreshold = 2;
+            
+            if (!_isDisplay && Math.Sqrt(data.Acceleration.X * data.Acceleration.X + data.Acceleration.Y * data.Acceleration.Y + data.Acceleration.Z * data.Acceleration.Z) > shakeThreshold)
             {
-                await Navigation.PushPopupAsync(_popup);
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    _isDisplay = true;
+                    HolePopUp popup = new HolePopUp();
+                    popup.PopupClosed += () => { _isDisplay = false; };
+                    await PopupNavigation.Instance.PushAsync(popup);
+                });
             }
+        }
+
+        private void PopulateMap()
+        {
+            //Szczecin: long=14.5530200 lati=53.4289400
+            var markers = new List<Pin>();
+            
+            ImageryLayer layer = new ImageryLayer();
+            
+            MapMarker marker = new MapMarker();
+            marker.Label = "PotHole UwU";
+            marker.Latitude = "53";
+            marker.Longitude = "14";
+            layer.Markers.Add(marker);
+            this.Content = _map;
+            
+            _map.Layers.Add(layer);
+            
+            /*foreach (var hole in DbConnectionHandler.PotholesList)
+            {
+                
+            }*/
         }
     }
 }

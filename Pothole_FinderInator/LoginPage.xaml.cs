@@ -17,12 +17,16 @@ namespace Pothole_FinderInator
             InitializeComponent();
         }
 
-        private void LoginEvent(System.Object sender, System.EventArgs e)
+        private async void LoginEvent(System.Object sender, System.EventArgs e)
         {
             var userValue = DbConnectionHandler.Login(Username.Text, Password.Text);
             if (userValue == 1)
             {
                 DbConnectionHandler.UserName = Username.Text;
+                Warning.Text = "Login succes!";
+                Shell.Current.CurrentItem.IsVisible = false;
+                await Shell.Current.GoToAsync("//Main Page");
+
             }
             else if (userValue > 1 || userValue == 0)
             {

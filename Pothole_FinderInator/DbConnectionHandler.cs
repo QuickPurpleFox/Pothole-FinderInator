@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application = Xamarin.Forms.Application;
 using Npgsql;
@@ -12,6 +13,7 @@ namespace Pothole_FinderInator
         private static NpgsqlConnection _conn;
         
         public static string UserName = null;
+        public  static List<Pothole> PotholesList;
 
             
         static DbConnectionHandler()
@@ -61,8 +63,8 @@ namespace Pothole_FinderInator
                     _conn.Open();
                     cmd.Connection = _conn;
                     cmd.CommandText = "SELECT COUNT(*) FROM users WHERE username=@username AND password=@password;";
-                    cmd.Parameters.AddWithValue("username", NpgsqlDbType.Text, username);
-                    cmd.Parameters.AddWithValue("password", NpgsqlDbType.Text, password);
+                    cmd.Parameters.AddWithValue("@username", NpgsqlDbType.Text, username);
+                    cmd.Parameters.AddWithValue("@password", NpgsqlDbType.Text, password);
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -94,6 +96,62 @@ namespace Pothole_FinderInator
         public static int Login(string username, string password)
         {
             return UserExistsCheck(username, password);
+        }
+
+        public static bool InsertPotHole(string latitude, string longitude, string holeSize)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                try
+                {
+                    _conn = new NpgsqlConnection(_connString.ConnectionString);
+                    _conn.Open();
+                    cmd.Connection = _conn;
+                    cmd.CommandText =
+                        "INSERT INTO potholes (latitude, longitude, hole_size) VALUES (@latitude, @longitude, @hole_size);";
+                    cmd.Parameters.AddWithValue("@latitude", NpgsqlDbType.Double, latitude);
+                    cmd.Parameters.AddWithValue("@longitude", NpgsqlDbType.Double, longitude);
+                    cmd.Parameters.AddWithValue("@hole_size", NpgsqlDbType.Text, holeSize);
+
+                    cmd.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return false;
+                }
+            }
+        }
+
+        public static void GetPotholes()
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                try
+                {
+                    _conn = new NpgsqlConnection(_connString.ConnectionString);
+                    _conn.Open();
+                    cmd.Connection = _conn;
+                    cmd.CommandText = "SELECT * FROM potholes";
+                    PotholesList = new List<Pothole>();
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Pothole pothole = new Pothole(reader.GetDouble(1), reader.GetDouble(2),
+                                reader.GetString(3));
+
+                            PotholesList.Add(pothole);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
     }
 }

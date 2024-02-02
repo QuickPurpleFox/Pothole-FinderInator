@@ -22,17 +22,17 @@
                      Order="Default"/>
     </Shell.ToolbarItems>
     
-    <FlyoutItem Route="Login" 
-                FlyoutDisplayOptions="AsMultipleItems"
-                x:Name="LoginPageViewCommand">
-        <ShellContent Title="Login"
-                      ContentTemplate="{DataTemplate potholeFinderInator:LoginPage}"/>
-    </FlyoutItem>
-    
     <FlyoutItem Route="Main Page" 
                 FlyoutDisplayOptions="AsMultipleItems"
                 x:Name="MainPageSideViewCommand">
         <ShellContent Title="Main Page"
                       ContentTemplate="{DataTemplate potholeFinderInator:MainPage}"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Route="Login" 
+                FlyoutDisplayOptions="AsMultipleItems"
+                x:Name="LoginPageSideViewCommand">
+        <ShellContent Title="Login"
+                      ContentTemplate="{DataTemplate potholeFinderInator:LoginPage}"/>
     </FlyoutItem>
 </Shell>

@@ -2,14 +2,46 @@
 
 <pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
        xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+       xmlns:local="clr-namespace:Pothole_FinderInator"
        x:Class="Pothole_FinderInator.HolePopUp">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+    
+    <!--{Binding Source={x:Static local:HolePopUp.PopUpHeight}}-->
+    <!--{Binding Source={x:Static local:HolePopUp.PopUpWidth}}-->
+    <Frame VerticalOptions="Center"
+           HorizontalOptions="Center"
+           CornerRadius="10"
+           Padding="0"
+           BackgroundColor="White"
+    >
+        <StackLayout Padding="20">
+            
+            <Label Text="This is a Popup" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Image Source="Alert.png" WidthRequest="180" HeightRequest="180"/>
+            <Picker x:Name="HoleSizePicker" Title="Choose Hole Size">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Small</x:String>
+                        <x:String>Medium</x:String>
+                        <x:String>Big</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Accept"
+                        BackgroundColor="#6200EE"
+                        TextColor="White"
+                        Margin="0,0,10,0"/>
+                <Button Text="Close"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        Clicked="ClosePopupCommand"/>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+    </Frame>
 </pages:PopupPage>
