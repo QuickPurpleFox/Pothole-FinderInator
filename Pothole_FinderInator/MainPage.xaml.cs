@@ -19,7 +19,7 @@ namespace Pothole_FinderInator
         public MainPage()
         {
             InitializeComponent();
-            _map = SfMaps;
+            _map = this.SfMaps;
             StartAccelerationReading();
             DbConnectionHandler.GetPotholes();
 
@@ -90,18 +90,27 @@ namespace Pothole_FinderInator
         private void PopulateMap()
         {
             //Szczecin: long=14.5530200 lati=53.4289400
-            var markers = new List<Pin>();
+            var markers = new List<MapMarker>();
             
             ImageryLayer layer = new ImageryLayer();
+            layer.Radius = 1;
+            layer.DistanceType = DistanceType.KiloMeter;
             
             MapMarker marker = new MapMarker();
             marker.Label = "PotHole UwU";
             marker.Latitude = "53";
             marker.Longitude = "14";
             layer.Markers.Add(marker);
-            this.Content = _map;
             
+            MapMarkerSetting markerSetting = new MapMarkerSetting();
+            markerSetting.MarkerIcon = MapMarkerIcon.Image;
+            markerSetting.ImageSource = "Pothole.png";
+            layer.MarkerSettings = markerSetting;
             _map.Layers.Add(layer);
+            
+            markers.Add(marker);
+            
+            this.Content = _map;
             
             /*foreach (var hole in DbConnectionHandler.PotholesList)
             {

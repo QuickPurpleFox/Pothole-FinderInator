@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\gps.png" />
+    <AndroidResource Include="Resources\drawable\Pothole.png" />
     <AndroidResource Include="Resources\drawable\PotholeFinder.png" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
