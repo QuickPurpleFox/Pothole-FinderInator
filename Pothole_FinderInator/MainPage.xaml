@@ -2,41 +2,88 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             xmlns:local="clr-namespace:Pothole_FinderInator"
              x:Class="Pothole_FinderInator.MainPage">
 
     <ContentPage.Resources>
-        <ResourceDictionary Source="Secretkeys1.xaml"/>
+        <ResourceDictionary Source="Secretkeys1.xaml">
+            
+            <DataTemplate x:Key="GpsTemplate">
+                <StackLayout IsClippedToBounds="false"
+                         HorizontalOptions="StartAndExpand"
+                         VerticalOptions="Center"
+                         HeightRequest="30">
+                <Image Source="gps.png"
+                       Scale="1"
+                       Aspect="AspectFit "
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       HeightRequest="15"
+                       WidthRequest="23" />
+            </StackLayout>
+           </DataTemplate>
+
+
+            <DataTemplate x:Key="smallPotholeTemplate">
+                <StackLayout IsClippedToBounds="false"
+                         HorizontalOptions="StartAndExpand"
+                         VerticalOptions="Center"
+                         HeightRequest="30">
+                    <Image Source="potholeSmall.png"
+                       Scale="1"
+                       Aspect="AspectFit "
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       HeightRequest="15"
+                       WidthRequest="23" />
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="mediumPotholeTemplate">
+                <StackLayout IsClippedToBounds="false"
+             HorizontalOptions="StartAndExpand"
+             VerticalOptions="Center"
+             HeightRequest="30">
+                    <Image Source="potholeMedium.png"
+           Scale="1"
+           Aspect="AspectFit "
+           HorizontalOptions="StartAndExpand"
+           VerticalOptions="Center"
+           HeightRequest="15"
+           WidthRequest="23" />
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="bigPotholeTemplate">
+                <StackLayout IsClippedToBounds="false"
+             HorizontalOptions="StartAndExpand"
+             VerticalOptions="Center"
+             HeightRequest="30">
+                    <Image Source="potholeBig.png"
+           Scale="1"
+           Aspect="AspectFit "
+           HorizontalOptions="StartAndExpand"
+           VerticalOptions="Center"
+           HeightRequest="15"
+           WidthRequest="23" />
+                </StackLayout>
+            </DataTemplate>
+            <local:MarkerTemplateSelector x:Key="markerTemplateSelector"
+                                        GpsTemplate="{StaticResource GpsTemplate}"
+                                        SmallPotholeTemplate="{StaticResource smallPotholeTemplate}" 
+                                        MediumPotholeTemplate="{StaticResource mediumPotholeTemplate}" 
+                                        BigPotholeTemplate="{StaticResource bigPotholeTemplate}" />
+            </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout Spacing="0">
         <maps:SfMaps x:Name="SfMaps">
             <maps:SfMaps.Layers>
-                <maps:ImageryLayer x:Name="MapPossition"
-                                   Radius="1" 
-                                   DistanceType="KiloMeter" >
-                    <maps:ImageryLayer.MarkerTemplate>
-                        <DataTemplate>
-                            <Image Source="gps.png"
-                                   Scale="1"
-                                   Aspect="AspectFit"
-                                   HeightRequest="35"
-                                   WidthRequest="25"/>
-                        </DataTemplate>
-                    </maps:ImageryLayer.MarkerTemplate>
+                <maps:ImageryLayer x:Name="MapPosition" MarkerTemplate="{StaticResource markerTemplateSelector}">
                     <maps:ImageryLayer.Markers>
-                        <maps:MapMarker x:Name="Marker" 
-                                        Latitude="{Binding LatitudePossition}"
-                                        Longitude="{Binding LongitudePossition}">
+                        <maps:MapMarker x:Name="Marker"
+                        Label="gps"
+                        Latitude="{Binding LatitudePossition}"
+                        Longitude="{Binding LongitudePossition}">
                         </maps:MapMarker>
                     </maps:ImageryLayer.Markers>
-                    <maps:ImageryLayer.BingMapStyle>
-                        <maps:BingMapStyle>Road</maps:BingMapStyle>
-                    </maps:ImageryLayer.BingMapStyle>
-                    <!--<maps:ImageryLayer.LayerType>
-                        <maps:LayerType>Bing</maps:LayerType>
-                    </maps:ImageryLayer.LayerType>-->
-                    <maps:ImageryLayer.BingMapKey>
-                        <x:String>{StaticResource ApiKey}</x:String>
-                    </maps:ImageryLayer.BingMapKey>
                 </maps:ImageryLayer>
             </maps:SfMaps.Layers>
         </maps:SfMaps>

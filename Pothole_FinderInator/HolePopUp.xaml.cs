@@ -1,5 +1,4 @@
 ﻿using Rg.Plugins.Popup.Services;
-using System;
 using System.Diagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
@@ -39,9 +38,13 @@ namespace Pothole_FinderInator
         public void Accepted(System.Object sender, System.EventArgs e)
         {
             SelectedSize = HoleSizePicker.Items[HoleSizePicker.SelectedIndex].ToString();
-            DbConnectionHandler.InsertPotHole(potHole.GetLatitude().ToString(), potHole.GetLongitude().ToString(), SelectedSize);
+            if (!DbConnectionHandler.InsertPotHole(potHole.GetLatitude().ToString().Replace(",", "."), potHole.GetLongitude().ToString().Replace(",", "."), SelectedSize))
+            {
+                ocs.Text = "ERROR";
+            }
+            
             PopupNavigation.Instance.PopAsync();
-
+            
         }
     }
 }
