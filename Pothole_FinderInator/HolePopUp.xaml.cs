@@ -1,4 +1,6 @@
 ﻿using Rg.Plugins.Popup.Services;
+using System;
+using System.Diagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 
@@ -11,10 +13,12 @@ namespace Pothole_FinderInator
         public event PopupClosedHandler PopupClosed;
         public static double PopUpWidth;
         public static double PopUpHeight;
-        
-        
-        public HolePopUp()
+        public Pothole potHole;
+        string SelectedSize;
+
+        public HolePopUp(Pothole p)
         {
+            potHole = p;
             PopUpWidth = (DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density) * 0.9;
             PopUpHeight = (DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density) * 0.5;
             InitializeComponent();
@@ -24,12 +28,20 @@ namespace Pothole_FinderInator
         {
             PopupNavigation.Instance.PopAsync();
         }
-        
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            
+
             PopupClosed?.Invoke();
+        }
+
+        public void Accepted(System.Object sender, System.EventArgs e)
+        {
+            SelectedSize = HoleSizePicker.Items[HoleSizePicker.SelectedIndex].ToString();
+            DbConnectionHandler.InsertPotHole(potHole.GetLatitude().ToString(), potHole.GetLongitude().ToString(), SelectedSize);
+            PopupNavigation.Instance.PopAsync();
+
         }
     }
 }

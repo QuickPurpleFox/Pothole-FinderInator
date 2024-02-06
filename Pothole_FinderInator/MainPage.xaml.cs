@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Rg.Plugins.Popup.Services;
 using Syncfusion.SfMaps.XForms;
-using Xamarin.Forms.Maps;
+using System.ComponentModel;
+using System.Threading;
 
 namespace Pothole_FinderInator
 {
@@ -15,7 +15,9 @@ namespace Pothole_FinderInator
         private CancellationTokenSource _cts;
         private bool _isDisplay = false;
         private SfMaps _map;
-        
+        private double latitude;
+        private double longitude;
+
         public MainPage()
         {
             InitializeComponent();
@@ -24,18 +26,17 @@ namespace Pothole_FinderInator
             DbConnectionHandler.GetPotholes();
 
             PopulateMap();
-            
+
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
-            Device.StartTimer(new TimeSpan(0,0,1), () =>
+            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
                 GetCurrentLocation();
                 return true;
             });
         }
-        
+
         private async void GetCurrentLocation()
         {
-            
             try
             {
                 var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
@@ -45,12 +46,14 @@ namespace Pothole_FinderInator
                 if (location != null)
                 {
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
-                    
+                    latitude = location.Latitude;
+                    longitude = location.Longitude;
+
                     LatiBinding.Text = location.Latitude.ToString();
                     LongBinding.Text = location.Longitude.ToString();
 
                     MapPossition.GeoCoordinates = new Point(location.Latitude, location.Longitude);
-                    
+
                     Marker.Latitude = location.Latitude.ToString();
                     Marker.Longitude = location.Longitude.ToString();
                 }
@@ -67,55 +70,38 @@ namespace Pothole_FinderInator
             SensorSpeed speed = SensorSpeed.UI;
             Accelerometer.Start(speed);
         }
-        
+
         private async void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
         {
             var data = e.Reading;
             Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
-            
-            double shakeThreshold = 2;
-            
+
+            double shakeThreshold = 1.5;
+
             if (!_isDisplay && Math.Sqrt(data.Acceleration.X * data.Acceleration.X + data.Acceleration.Y * data.Acceleration.Y + data.Acceleration.Z * data.Acceleration.Z) > shakeThreshold)
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
                     _isDisplay = true;
-                    HolePopUp popup = new HolePopUp();
+                    Pothole p = new Pothole(latitude, longitude, "");
+                    HolePopUp popup = new HolePopUp(p);
                     popup.PopupClosed += () => { _isDisplay = false; };
                     await PopupNavigation.Instance.PushAsync(popup);
+
                 });
             }
         }
 
         private void PopulateMap()
-        {
-            //Szczecin: long=14.5530200 lati=53.4289400
-            var markers = new List<MapMarker>();
-            
-            ImageryLayer layer = new ImageryLayer();
-            layer.Radius = 1;
-            layer.DistanceType = DistanceType.KiloMeter;
-            
-            MapMarker marker = new MapMarker();
-            marker.Label = "PotHole UwU";
-            marker.Latitude = "53";
-            marker.Longitude = "14";
-            layer.Markers.Add(marker);
-            
-            MapMarkerSetting markerSetting = new MapMarkerSetting();
-            markerSetting.MarkerIcon = MapMarkerIcon.Image;
-            markerSetting.ImageSource = "Pothole.png";
-            layer.MarkerSettings = markerSetting;
-            _map.Layers.Add(layer);
-            
-            markers.Add(marker);
-            
-            this.Content = _map;
-            
-            /*foreach (var hole in DbConnectionHandler.PotholesList)
+        { 
+            foreach (var hole in DbConnectionHandler.PotholesList)
             {
-                
-            }*/
+                MapMarker potholeMarker = new MapMarker();
+                potholeMarker.Label = "PotHole UwU";
+                potholeMarker.Latitude = hole.GetLatitude().ToString();
+                potholeMarker.Longitude = hole.GetLongitude().ToString();
+                MapPossition.Markers.Add(potholeMarker);
+            }
         }
     }
 }

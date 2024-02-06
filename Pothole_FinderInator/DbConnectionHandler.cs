@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Application = Xamarin.Forms.Application;
 using Npgsql;
 using NpgsqlTypes;
+using System.Data;
 
 namespace Pothole_FinderInator
 {
@@ -11,24 +12,21 @@ namespace Pothole_FinderInator
     {
         private static NpgsqlConnectionStringBuilder _connString;
         private static NpgsqlConnection _conn;
-        
-        public static string UserName = null;
-        public  static List<Pothole> PotholesList;
 
-            
+        public static string UserName = null;
+        public static List<Pothole> PotholesList;
+
         static DbConnectionHandler()
         {
             Application.Current.Resources.TryGetValue("Password", out var password);
-            
-            //Uri databaseUrl = new Uri(dbUrl.ToString());
-            
+
             _connString = new NpgsqlConnectionStringBuilder();
             _connString.Host = "pothole-cockroach-8522.7tc.aws-eu-central-1.cockroachlabs.cloud";
             _connString.Port = 26257;
-            
+
             _connString.Username = "28860";
             _connString.Password = password.ToString();
-            
+
             _connString.Database = "pothole_finder";
             _connString.SslMode = SslMode.Require;
 
@@ -39,10 +37,7 @@ namespace Pothole_FinderInator
         {
             try
             {
-                var dataSourceBuilder = new NpgsqlDataSourceBuilder(_connString.ConnectionString);
-                var dataSource = dataSourceBuilder.Build();
-
-                _conn = await dataSource.OpenConnectionAsync();
+                _conn = new NpgsqlConnection(_connString.ConnectionString);
                 await _conn.OpenAsync();
             }
             catch (NpgsqlException e)
@@ -51,7 +46,7 @@ namespace Pothole_FinderInator
                 throw new NpgsqlException();
             }
         }
-        
+
         private static int UserExistsCheck(string username, string password)
         {
             var userCheck = 0;
@@ -108,19 +103,31 @@ namespace Pothole_FinderInator
                     _conn.Open();
                     cmd.Connection = _conn;
                     cmd.CommandText =
-                        "INSERT INTO potholes (latitude, longitude, hole_size) VALUES (@latitude, @longitude, @hole_size);";
-                    cmd.Parameters.AddWithValue("@latitude", NpgsqlDbType.Double, latitude);
-                    cmd.Parameters.AddWithValue("@longitude", NpgsqlDbType.Double, longitude);
+                        "INSERT INTO potholes (latitude, longitude, hole_size) VALUES (@latitude,@longitude,@hole_size);";
+                    cmd.Parameters.AddWithValue("@latitude", NpgsqlDbType.Text, latitude);
+                    cmd.Parameters.AddWithValue("@longitude", NpgsqlDbType.Text, longitude);
                     cmd.Parameters.AddWithValue("@hole_size", NpgsqlDbType.Text, holeSize);
 
                     cmd.ExecuteNonQuery();
 
                     return true;
                 }
+                catch (NpgsqlException e)
+                {
+                    Console.WriteLine(e);
+                    return false;
+                }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
                     return false;
+                }
+                finally
+                {
+                    if (_conn != null && _conn.State == ConnectionState.Open)
+                    {
+                        _conn.Close();
+                    }
                 }
             }
         }
@@ -150,6 +157,13 @@ namespace Pothole_FinderInator
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                }
+                finally
+                {
+                    if (_conn != null && _conn.State == ConnectionState.Open)
+                    {
+                        _conn.Close();
+                    }
                 }
             }
         }

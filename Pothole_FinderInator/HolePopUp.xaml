@@ -19,7 +19,7 @@
     >
         <StackLayout Padding="20">
             
-            <Label Text="This is a Popup" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="ocs" Text="This is a Popup" HorizontalOptions="Center" VerticalOptions="Center" />
             <Image Source="Alert.png" WidthRequest="180" HeightRequest="180"/>
             <Picker x:Name="HoleSizePicker" Title="Choose Hole Size">
                 <Picker.ItemsSource>
@@ -34,7 +34,8 @@
                 <Button Text="Accept"
                         BackgroundColor="#6200EE"
                         TextColor="White"
-                        Margin="0,0,10,0"/>
+                        Margin="0,0,10,0"
+                        Clicked="Accepted"/>
                 <Button Text="Close"
                         BackgroundColor="White"
                         TextColor="Black"

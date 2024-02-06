@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
              x:Class="Pothole_FinderInator.MainPage">
-    
+
     <ContentPage.Resources>
         <ResourceDictionary Source="Secretkeys1.xaml"/>
     </ContentPage.Resources>
@@ -40,7 +40,7 @@
                 </maps:ImageryLayer>
             </maps:SfMaps.Layers>
         </maps:SfMaps>
-        
+
         <Label Text="Debug: współrzędne"/>
         <Label x:Name="LatiBinding" Text="{Binding Latitude}"/>
         <Label x:Name="LongBinding" Text="{Binding Longitude}"/>
